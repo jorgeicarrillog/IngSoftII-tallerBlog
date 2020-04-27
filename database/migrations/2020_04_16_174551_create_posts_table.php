@@ -20,8 +20,10 @@ class CreatePostsTable extends Migration
             $table->text('content',500)->nullable();
             $table->enum('posted',['yes','not'])->default('not');
             $table->biginteger('categorie_id')->unsigned()->nullable();
+            $table->biginteger('user_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('categorie_id')->references('id')->on('categories');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

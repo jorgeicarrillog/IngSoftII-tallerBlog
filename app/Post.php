@@ -20,4 +20,12 @@ class Post extends Model
     {
         return $this->belongsTo('App\Categorie');
     }
+    
+    /**
+     * Get the new associated with the visit.
+     */
+    public function user()
+    {
+        return $this->hasOne('App\User','id','user_id');
+    }
 }
